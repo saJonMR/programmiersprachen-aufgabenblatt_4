@@ -20,7 +20,6 @@ int main() {
     }
     std::cout << std::endl;
     std::cout << std::endl;
-    
 
     //Initialise empty set
     std::set<unsigned int> setto;
@@ -34,7 +33,6 @@ int main() {
     std::cout << "The Vector has " << setto.size() << " different numbers." << std::endl;
     std::cout << std::endl;
 
-    
     //Output the numbers missing from the set
     std::cout << "The numbers: " <<  std::endl;
     for(int i = 1; i <= 100; ++i) {
@@ -47,7 +45,6 @@ int main() {
     std::cout << "are not included in the container" << std::endl;
     std::cout << std::endl;
     
-
     //Output set elements
     std::cout << "The set is filled with numbers: " << std::endl;
     for(auto i : setto) {

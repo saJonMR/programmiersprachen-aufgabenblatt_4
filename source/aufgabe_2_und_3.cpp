@@ -13,7 +13,6 @@ int main() {
     }
 
     //Output vector elements
-    
     std::cout << std::endl;
     std::cout << "The vector is filled with numbers: " << std::endl;
     for(auto i : vec) {

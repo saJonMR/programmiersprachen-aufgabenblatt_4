@@ -2,8 +2,13 @@
 #include <set>
 #include <map>
 #include <iostream>
+#include <iomanip>
+#include <list>
 
 int main() {
+    clock_t start, end;
+    start = clock();
+
     //Initialise vector with size 100
     std::vector<unsigned int> vec(100);
 
@@ -73,4 +78,29 @@ int main() {
         std::cout << i.first << " : " << i.second << std::endl;
     }
     std::cout << std::endl;
+
+    //Aufgabe 4.9
+    //Initialize empty list
+    std::list<int> l_0;
+
+    std::copy(std::begin(vec), std::end(vec), std::back_inserter(l_0));
+
+    //Output vector elements
+    std::cout << "Vector elements:" << std::endl;
+    std::copy(std::cbegin(vec) + 90, std::cend(vec), std::ostream_iterator<int>(std::cout, ", "));
+    std::cout << std::endl;
+    //Output list elements
+    auto beginning = std::begin(l_0);
+    for(int i = 1; i <= 90; ++i) {
+        beginning++;
+    }
+    std::cout << "List elements:" << std::endl;
+    std::copy(beginning, std::end(l_0), std::ostream_iterator<int>(std::cout, ", "));
+    std::cout << std::endl;
+
+    end = clock();
+    double time_taken = double(end - start) / double(CLOCKS_PER_SEC); 
+    std::cout << "Runtime : " << std::fixed << time_taken << std::setprecision(5); 
+    std::cout << " sec " << std::endl; 
+    return 0; 
 }

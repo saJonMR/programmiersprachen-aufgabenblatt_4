@@ -24,12 +24,18 @@ class Circle {
         void draw(Window const& w, bool highlight) const;
         void draw(Window const& w, float thickness, bool highlight) const;
 
+        //Clock Functions
         void drawSec(Window const& w) const;
         void drawMin(Window const& w) const;
         void drawHr(Window const& w) const;
-
+    
         bool is_inside(Vec2 const& v) const;
         bool is_inside(Window const& w) const;
+        
+        friend bool operator<(Circle const& lhs, Circle const& rhs);
+        friend bool operator>(Circle const& lhs, Circle const& rhs);
+        friend bool operator==(Circle const& lhs, Circle const& rhs);
+
     private:
         Vec2 center_;
         float radius_;

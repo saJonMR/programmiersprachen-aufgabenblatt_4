@@ -5,6 +5,17 @@
 #include "window.hpp"
 #include "mat2.hpp"
 
+bool operator<(Circle const& lhs, Circle const& rhs) {
+    return lhs.radius_ < rhs.radius_;
+}
+
+bool operator>(Circle const& lhs, Circle const& rhs) {
+    return lhs.radius_ > rhs.radius_;
+}
+
+bool operator==(Circle const& lhs, Circle const& rhs) {
+    return lhs.radius_ == rhs.radius_;
+}
 
 float Circle::circumference() const {
     float res;
